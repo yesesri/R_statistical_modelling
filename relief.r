@@ -1,0 +1,16 @@
+### yeast 5mer ####
+library(FSelector)
+setwd("/home/ycheruku/nanopore_qs/newfeatures_analysis/feature_selection/relief")
+data<- read.delim2("yeast_5mer_class.txt",header = T)
+weights <- relief(predictor~., data, sample.size = nrow(data))
+print(weights)
+result <- print(weights)
+write.table(result,file = "yeast_5mer_relief.txt",quote=F)
+### yeast 10mer ####
+library(FSelector)
+setwd("/home/ycheruku/nanopore_qs/newfeatures_analysis/feature_selection/relief")
+data<- read.delim2("yeast_10mer_class.txt",header = T)
+weights <- relief(predictor~., data, sample.size = nrow(data))
+print(weights)
+result <- print(weights)
+write.table(result,file = "yeast_10mer_relief.txt",quote=F)
